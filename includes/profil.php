@@ -39,7 +39,7 @@ if(!empty($_SESSION) &&
             
             <p>
                 <!-- FORMULAIRE DE LOGIN -->
-                <form method="POST" action="backoffice.php">
+                <form id="loginForm" method="POST" action="backoffice.php">
                     <p>
                         <input type="text" name="login" value="<?php echo $login?>" placeholder="login" required=""/>
                     </p>

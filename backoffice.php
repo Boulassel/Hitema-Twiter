@@ -3,6 +3,7 @@ session_start();
 define('APP_PATH', __DIR__);
 include (APP_PATH.'/conf/_conf.php');
 include (INC_DIR.'/functions.php');
+include './includes/header.php';
 
 $logon = FALSE;
 $fileImage = '';
