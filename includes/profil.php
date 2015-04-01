@@ -41,10 +41,10 @@ if(!empty($_SESSION) &&
                 <!-- FORMULAIRE DE LOGIN -->
                 <form id="loginForm" method="POST" action="backoffice.php">
                     <p>
-                        <input type="text" name="login" value="<?php echo $login?>" placeholder="login" required=""/>
+                        <input type="text" id="id_login" name="login" value="<?php echo $login?>" placeholder="login" required=""/>
                     </p>
                     <p>
-                        <input type="password" name="password" value="" placeholder="Mot de passe" required=""/>
+                        <input type="password" id="id_mdp" name="password" value="" placeholder="Mot de passe" required=""/>
                     </p>
                     <p>
                         <input type="submit" name="logon" value="Se connecter">

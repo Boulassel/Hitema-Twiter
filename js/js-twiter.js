@@ -1,36 +1,23 @@
-/* 
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+$("#container").children("form").attr("action", "#");
 
-        $('#loginForm').submit(function() {
-           checkLogin();
-        });
-        alert("hi");
+function checkLogin()
+{
+    event.preventDefault();  // Empêcher le rechargement de la page.
+    var login = $("#id_login").val();
+    var password = $("#id_mdp").val();
 
-        function checkLogin()
-        {
-            alert('samir');
-//             $.ajax({
-//                url: "login.php",
-//                type: "POST",
-//                data: {
-//                    username: $("#username").val(),
-//                    password: $("#password").val()
-//                },
-//                success: function(response)
-//                {
-//                    if(response == 'true')
-//                    {
-//                        window.location.replace("main.html");
-//                    }
-//                    else
-//                    {
-//                        $("#errorMessage").html(response);
-//                    }
-//                }
-//            });
+    $.ajax({
+        type: "POST",
+        url: "backoffice.php",
+        data: {login : login,
+            password : password,
+            logon : "logon"},
+        success: function (r) {
+            $("body").html(r);
         }
-    
- 
+    });
+}
+
+$('#loginForm').submit(function () {
+    checkLogin();
+});
