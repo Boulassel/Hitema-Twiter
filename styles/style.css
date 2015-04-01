@@ -1,0 +1,107 @@
+#container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+article {
+    border: 1px solid #0297cc ;
+    width: 50%;
+    margin: 0 auto 0.5em;
+    padding: 0.5em;    
+}
+
+.twitdate, .twitheure {
+    margin: 0;
+}
+
+.twitdate {
+    text-decoration: underline;
+}
+
+.twitheure {
+    
+}
+
+.twittext {
+    text-align: justify;
+}
+
+.twitauteur {
+    text-align: right;
+}
+
+.bouton {
+    text-decoration: none;
+}
+
+input, .bouton {
+    border: 1px solid #bbb;
+    padding: 10px;
+    font-size: 1em;
+    color: #333;
+}
+
+input[type="submit"], .bouton {
+    background-color: #ddd;
+}
+
+form {
+    display: inline-block;
+}
+
+.error {
+    color: #b94a48;
+    background-color: #f2dede;
+    border-color: #eed3d7;
+    width: 100%;
+    margin: 0 auto 20px;
+    padding: 8px 10px;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.5);
+    border: 1px solid #fbeed5;
+    border-radius: 4px;
+}
+
+#barremenu, #loginbar {
+    text-align: center;
+    line-height: 3em;
+    width: 50%;
+    margin: 0 auto;
+}
+
+#gauche {
+    float: left;
+}
+
+#droite {
+    float: right;
+}
+
+.page {
+    margin: 0 5px;
+}
+
+.barreoutils {
+    text-align: right;
+}
+.barreoutils li {
+    display: inline-block;
+}
+
+.retwit {
+    background: url('../img/png/bookmark50.png') no-repeat;
+}
+
+.favoris {
+    background: url('../img/png/connection41.png') no-repeat;
+}
+.retwit a, .favoris a {
+    width: 24px;
+    height: 24px;
+    display: inline-block;
+}
+.stylefavorie{
+    background: yellow;
+}
+img{
+    width: 50px;
+}
