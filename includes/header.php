@@ -1,9 +1,11 @@
 <!doctype html>
-<html>
+<html lang="fr">
 
-<head>
-    
+    <head>
+
         <meta charset="utf-8">
         <link rel="stylesheet" href="styles/style.css" />
-</head>
-<body>
+        <script src="../js/jquery-2.1.3.js" type="text/javascript"></script>
+        
+    </head>
+    <body>
