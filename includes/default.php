@@ -52,13 +52,13 @@ if (filter_has_var(INPUT_GET, 'action')) {
 $twit = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 
 //var_dump($Twit);
-
+// tableau de action dans l'url favoris ou retwit
 if (!empty($Twit)) {
     newAction($Twit, $_SESSION['ID']);
     header('Location: index.php');
     die();
 }
-
+// Ajout d'un twit
 if (!empty($twit)) {
     echo newTwit($twit, $_SESSION['ID']);
     header('Location: index.php');
@@ -73,7 +73,7 @@ $nbtwits = nbTwits();
 
 $countTwits = count($resTwits);
 
-$tabTwitFavoris = getTwitsFavoris($_SESSION['ID']);
+@$tabTwitFavoris = getTwitsFavoris($_SESSION['ID']);
 //var_dump($tabTwitFavoris);
 ?>
 <nav id="barremenu">
@@ -81,7 +81,7 @@ $tabTwitFavoris = getTwitsFavoris($_SESSION['ID']);
         <?php
         if ($prev >= 15 && $prev < $nbtwits['nbtwits']) {
             ?>
-            <a class="bouton" href="index.php?prev=<?php echo $prev; ?>" title="Anciens"><<</a>
+            <a class="bouton" href="index.php?prev=<?= $prev ?>" title="Anciens"><<</a>
             <?php
         }
         ?>
@@ -101,7 +101,7 @@ $tabTwitFavoris = getTwitsFavoris($_SESSION['ID']);
             //echo $next.' | '.$prev.' | '.$pas.'<br/>';
             ?>
 
-            <a class="bouton" href="index.php?next=<?php echo $next; ?>" title="Nouveaux">>></a>
+            <a class="bouton" href="index.php?next=<?= $next ?>" title="Nouveaux">>></a>
             <?php
         }
         ?></span>
@@ -118,8 +118,7 @@ if ($countTwits > 0) {
 //                echo '<br>id message : ' . $twit['idMessage'];
 //                echo '<br>';
                 if ($value2 == $twit['idMessage']) {
-                    $classe = 'stylefavorie';
-                    
+                    $classe = 'stylefavorie';           
                 }
                 
 //                var_dump($classe);
@@ -128,16 +127,16 @@ if ($countTwits > 0) {
         ?>
 
         <article class="twit <?php echo $classe; ?>">
-            <h1 class="twitdate"><?php echo $dateheure[0]; ?></h1><h4 class="twitheure"><?php echo $dateheure[1]; ?></h4>
-            <p class="twittext"><?php echo $twit['idMessage'] . ' ' . mb_substr($twit['message'], 0, 140) . ' ' . $twit['uretwit']; ?>[...]</p>
+            <h1 class="twitdate"><?= $dateheure[0] ?></h1><h4 class="twitheure"><?= $dateheure[1] ?></h4>
+            <p class="twittext"><?= $twit['idMessage'] . ' ' . mb_substr($twit['message'], 0, 140) . ' ' . $twit['uretwit']; ?>[...]</p>
             <ul class="barreoutils">
                 <li class="retwit">
-                    <a href="index.php?action=favorit&id=<?php echo $twit['idMessage']; ?>&origin=<?php echo $twit['idUser']; ?>" title="retwit"></a>
+                    <a data-id="<?= $twit['idMessage'] ?>" data-user="<?= $twit['idUser']?>" class=" lien_favoris" href="index.php?action=favorit&id=<?= $twit['idMessage'] ?>&origin=<?= $twit['idUser'] ?>" title="favoris"></a>
                 </li>
                 <li class="favoris">
-                    <a href="index.php?action=retwit&id=<?php echo $twit['idMessage']; ?>&origin=<?php echo $twit['idUser']; ?>" title="favoris"></a>
+                    <a href="index.php?action=retwit&id=<?= $twit['idMessage'] ?>&origin=<?= $twit['idUser'] ?>" title="retwit"></a>
                 </li>
-                <li class="twitauteur"><?php echo '@' . $twit['login']; ?></li>
+                <li class="twitauteur"><?= '@' . $twit['login'] ?></li>
             </ul>
 
         </article>
