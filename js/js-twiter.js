@@ -23,17 +23,18 @@ $('#loginForm').submit(function (e) {
     checkLogin(e);
 });
 
-
+//nbpage = 1;
 // Ajout au favoris
 function addFavoris(event) {
     event.preventDefault(); // Empêcher le rechargement de la page.
     var idMessage = $(this).attr("data-id");
     var idUser = $(this).attr("data-user");
     var action = "favoris";
+    
     //alert(idMessage + " " + idUser);
     $.ajax({
         type: 'GET', // envoi des données en GET 
-        url: "index.php",
+        url: "index.php?nbpage=4",
         data: {
             id: idMessage,
             origin: idUser,
@@ -44,4 +45,10 @@ function addFavoris(event) {
     });
 
 }
+
+//$(".page").on("click", function (){
+//    nbpage = $(this).attr("data-nbpage");
+//    //alert(nbpage);
+//});
+
 $(".lien_favoris").on("click", addFavoris);

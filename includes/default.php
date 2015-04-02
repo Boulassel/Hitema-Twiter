@@ -55,7 +55,7 @@ $twit = filter_input(INPUT_POST, 'message', FILTER_SANITIZE_FULL_SPECIAL_CHARS);
 // tableau de action dans l'url favoris ou retwit
 if (!empty($Twit)) {
     newAction($Twit, $_SESSION['ID']);
-    header('Location: index.php');
+    header('Location: index.php?' );
     die();
 }
 // Ajout d'un twit
@@ -89,7 +89,7 @@ $countTwits = count($resTwits);
     <span id="milieu">
         <?php
         for ($i = 1; $i <= $nbtwits['nbpages']; ++$i) {
-            echo '<a class="page" href="index.php?nbpage=' . $i . '">' . $i . '</a>';
+            echo '<a data-nbpage="'.$i.'" class="page" href="index.php?nbpage=' . $i . '">' . $i . '</a>';
         }
         ?>
     </span>
