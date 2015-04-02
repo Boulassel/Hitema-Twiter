@@ -29,7 +29,7 @@ function addFavoris(event) {
     event.preventDefault(); // Empêcher le rechargement de la page.
     var idMessage = $(".lien_favoris").attr("data-id");
     var idUser = $(".lien_favoris").attr("data-user");
-    var action = "favorit";
+    var action = "favoris";
     //alert(idMessage + " " + idUser);
     $.ajax({
         type: 'GET', // envoi des données en GET 

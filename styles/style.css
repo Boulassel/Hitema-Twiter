@@ -87,11 +87,11 @@ form {
     display: inline-block;
 }
 
-.retwit {
+.favoris {
     background: url('../img/png/bookmark50.png') no-repeat;
 }
 
-.favoris {
+.retwit {
     background: url('../img/png/connection41.png') no-repeat;
 }
 .retwit a, .favoris a {

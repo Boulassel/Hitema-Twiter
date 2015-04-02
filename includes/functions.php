@@ -314,7 +314,7 @@ function newAction($tabTwit, $idUSer) {
             $data->closeCursor();
 //        var_dump($result);
 //        print_r($data->errorInfo());
-        } elseif ($tabTwit['action'] == 'favorit') {
+        } elseif ($tabTwit['action'] == 'favoris') {
             if (empty(twitsFavorisExist($idUSer, $tabTwit['id']))) {
 
                 $reqRetwit = 'INSERT INTO `twitr2`.`favoris` (`idUser`, `idMessage`)';

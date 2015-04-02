@@ -130,10 +130,10 @@ if ($countTwits > 0) {
             <h1 class="twitdate"><?= $dateheure[0] ?></h1><h4 class="twitheure"><?= $dateheure[1] ?></h4>
             <p class="twittext"><?= $twit['idMessage'] . ' ' . mb_substr($twit['message'], 0, 140) . ' ' . $twit['uretwit']; ?>[...]</p>
             <ul class="barreoutils">
-                <li class="retwit">
-                    <a data-id="<?= $twit['idMessage'] ?>" data-user="<?= $twit['idUser']?>" class=" lien_favoris" href="index.php?action=favorit&id=<?= $twit['idMessage'] ?>&origin=<?= $twit['idUser'] ?>" title="favoris"></a>
-                </li>
                 <li class="favoris">
+                    <a data-id="<?= $twit['idMessage'] ?>" data-user="<?= $twit['idUser']?>" class="lien_favoris" href="index.php?action=favoris&id=<?= $twit['idMessage'] ?>&origin=<?= $twit['idUser'] ?>" title="favoris"></a>
+                </li>
+                <li class="retwit">
                     <a href="index.php?action=retwit&id=<?= $twit['idMessage'] ?>&origin=<?= $twit['idUser'] ?>" title="retwit"></a>
                 </li>
                 <li class="twitauteur"><?= '@' . $twit['login'] ?></li>
