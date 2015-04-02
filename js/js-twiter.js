@@ -27,8 +27,8 @@ $('#loginForm').submit(function (e) {
 // Ajout au favoris
 function addFavoris(event) {
     event.preventDefault(); // Empêcher le rechargement de la page.
-    var idMessage = $(".lien_favoris").attr("data-id");
-    var idUser = $(".lien_favoris").attr("data-user");
+    var idMessage = $(this).attr("data-id");
+    var idUser = $(this).attr("data-user");
     var action = "favoris";
     //alert(idMessage + " " + idUser);
     $.ajax({
