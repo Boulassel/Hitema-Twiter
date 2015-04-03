@@ -14,12 +14,8 @@ function retwit(event) {
             origin: idUser,
             action: action}, 
         success: function (r) {
-            $("body").html(r);
-            alert (idUser);
-            alert (idMessage);
-            
+            $("body").html(r);           
         }
     });
-
 }
 $(".RT").on("click", retwit);
