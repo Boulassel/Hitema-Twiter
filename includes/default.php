@@ -134,7 +134,7 @@ if ($countTwits > 0) {
                     <a data-id="<?= $twit['idMessage'] ?>" data-user="<?= $twit['idUser']?>" class="lien_favoris" href="index.php?action=favoris&id=<?= $twit['idMessage'] ?>&origin=<?= $twit['idUser'] ?>" title="favoris"></a>
                 </li>
                 <li class="retwit">
-                    <a class="RT" data-id="<?= $twit['idMessage'] ?>" data-user="<?= $twit['idUser']?>" href="index.php?action=retwit&id=<?= $twit['idMessage'] ?>&origin=<?= $twit['idUser'] ?>" title="retwit"></a>
+                    <a data-id="<?= $twit['idMessage'] ?>" data-user="<?= $twit['idUser']?>" class="RT" href="index.php?action=retwit&id=<?= $twit['idMessage'] ?>&origin=<?= $twit['idUser'] ?>" title="retwit"></a>
                 </li>
                 <li class="twitauteur"><?= '@' . $twit['login'] ?></li>
             </ul>

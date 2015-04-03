@@ -15,6 +15,8 @@ function retwit(event) {
             action: action}, 
         success: function (r) {
             $("body").html(r);
+            alert (idUser);
+            alert (idMessage);
             
         }
     });
